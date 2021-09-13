@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+{% block body %}
+
+        <h2>Titre du memo</h2>
+        {{ memo.titre | raw }}
+        <div class="content">
+        {{ memo.contenu | raw }}
+        </div>
+         <a href="{{path('memo_edit',{'id':memo.id} )}}" class="btn btn-primary">Editer</a>
+         <a href="{{path('memo_delete',{'id':memo.id} )}}" class="btn btn-primary">Suppr</a>
+
+
+{% endblock %}

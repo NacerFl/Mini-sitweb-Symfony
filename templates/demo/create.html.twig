@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formMemo 'bootstrap_4_layout.html.twig' %}
+
+
+
+
+{% block body %}
+
+    {%if app.user%}
+
+    <h1> Création du memo </h1>
+
+    {{ form_start(formMemo) }}
+
+    {{ form_widget(formMemo) }}
+
+
+    <button type="submit" class='btn btn-primary'>Ajouter memo</button>
+    {{ form_end(formMemo) }}
+
+    {% else %}
+
+    <h2>Connectez vous pour crée un memo</h2>
+    <a href="{{path('login')}}" class="btn btn-primary">Connexion</a>
+    {% endif %}
+
+{% endblock %}
